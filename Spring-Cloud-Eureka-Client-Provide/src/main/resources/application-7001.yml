@@ -1,0 +1,12 @@
+server:
+  port: 7001 #运行端口号
+spring:
+  application:
+    name: eureka-client-provide #服务名称
+eureka:
+  client:
+    register-with-eureka: true #注册到Eureka的注册中心
+    fetch-registry: true #获取注册实例列表
+    service-url:
+      #defaultZone: http://localhost:8001/eureka/ #配置注册中心地址
+      defaultZone: http://replica1:8002/eureka/,http://replica2:8003/eureka/ #同时注册到两个注册中心
